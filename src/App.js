@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Pelanggaran from "./pages/Pelanggaran";
+import User from "./pages/User";
+import Siswa from "./pages/Siswa";
+import PelanggaranSiswa from "./pages/PelanggaranSiswa";
+import ListPelanggaranSiswa from "./pages/ListPelanggaranSiswa";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+  return(
+    <BrowserRouter>
+    
+    <Routes>
+      <Route path="/signin" element={<Login />} />
+      <Route path="/pelanggaran" element={<Pelanggaran />} />
+      <Route path="/user" element={<User />} />
+      <Route path="/siswa" element={<Siswa />} />
+      <Route path="/pelanggaranSiswa" element={<PelanggaranSiswa />} />
+      <Route path="/listPelanggaranSiswa" element={<ListPelanggaranSiswa />} />
+    </Routes>
+    </BrowserRouter>
+  )
 }
-
-export default App;
